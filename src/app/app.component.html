@@ -1,10 +1,11 @@
 <div class="app-container d-flex flex-column">
-    <header class="app-header d-flex justify-content-between align-items-center py-1 px-4">
+    <div class="app-header d-flex justify-content-between align-items-center px-4 py-4">
         <div class="app-author d-flex justify-content-start fs-3">𝒩𝒾𝓀𝒾𝓉𝒶 𝒫𝒶𝓃𝒹𝑒𝓎</div>
         <div class="app-menu">
             <ul class="list-inline my-0 fs-6">
                 <li class="list-inline-item"><a href="#about-author">ABOUT</a></li>
                 <li class="list-inline-item"><a href="#book-section">BOOK</a></li>
+                <li class="list-inline-item"><a href="#author-portfolio">PORTFOLIO</a></li>
             </ul>
         </div>
         <div class="app-link d-flex justify-content-end">
@@ -28,8 +29,8 @@
                 </li>
             </ul>
         </div>
-    </header>
-    <section class="app-content d-flex flex-column flex-grow-1 pt-4">
+    </div>
+    <section class="app-content d-flex flex-column flex-grow-1">
         <div class="app-about d-flex flex-column flex-grow-1 pb-4 px-4">
             <!-- Author -->
             <div id="about-author" class="mb-5">
@@ -44,18 +45,19 @@
                             readers to new worlds, challenge their perspectives, and evoke a range of emotions.
                         </p>
                         <p class="mt-2">
-                            Nikita debuted in the world of literature with the fiction novel “The Day I Live For” which
-                            is a romantic mystery. With a keen eye for detail and a knack for creating authentic
-                            dialogue, she invites readers on an unforgettable literary journey.
+                            Nikita debuted in the world of literature with the fiction novel <strong>“The Day I Live
+                                For”</strong> which is a romantic mystery. With a keen eye for detail and a knack for
+                            creating authentic dialogue, she invites readers on an unforgettable literary journey.
                         </p>
                         <p class="mt-2">
                             Apart from being a software engineer and an author, Nikita holds a great interest in music.
                             She is also a classical singer.
                         </p>
                         <p class="mt-2">
-                            “The Day I Live For” is Nikita’s first foray into the world of published fiction, and she is
-                            excited to share this story with readers everywhere. She looks forward to connecting with
-                            the literary community and embarking on this new chapter of her writing career.
+                            <strong>“The Day I Live For”</strong> is Nikita’s first foray into the world of published
+                            fiction, and she is excited to share this story with readers everywhere. She looks forward
+                            to connecting with the literary community and embarking on this new chapter of her writing
+                            career.
                         </p>
                         <p class="mt-2">
                             <a href="#author-portfolio" class="portfolio-link">VIEW PORTFOLIO</a>
@@ -101,13 +103,14 @@
                 <div class="d-flex flex-column">
                     <div class="fs-1 text-center my-5">Portfolio</div>
                     <div class="portfolio-images d-flex flex-wrap my-5">
-                        <img class="portfolio-img m-2" *ngFor="let imgName of portfolioImages"
-                            [src]="'/assets/' + imgName" />
+                        <div class="portfolio-img-card m-2" *ngFor="let imgName of portfolioImages">
+                            <img class="portfolio-img" [src]="'/assets/' + imgName" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="app-footer text-center align-items-end py-1 px-4 mt-5">
+        <footer class="app-footer text-center align-items-end py-2 px-4 mt-5">
             &copy; 2023 Nikita Pandey. All rights reserved.
         </footer>
     </section>
