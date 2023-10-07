@@ -103,8 +103,8 @@
                 <div class="d-flex flex-column">
                     <div class="fs-1 text-center my-5">Portfolio</div>
                     <div class="portfolio-images d-flex flex-wrap my-5">
-                        <div class="portfolio-img-card m-2" *ngFor="let imgName of portfolioImages">
-                            <img class="portfolio-img" [src]="'/assets/' + imgName" />
+                        <div class="portfolio-img-card m-2" *ngFor="let imgName of portfolioImages; index as i">
+                            <img class="portfolio-img" [src]="'/assets/' + imgName" (click)="open(carouselModal, i)" />
                         </div>
                     </div>
                 </div>
@@ -115,3 +115,20 @@
         </footer>
     </section>
 </div>
+
+<ng-template #carouselModal let-modal>
+    <div class="modal-body d-flex flex-column">
+        <div class="d-flex justify-content-end">
+            <i class="close-icon bi bi-x-lg" ngbAutofocus (click)="modal.dismiss('Close modal')" aria-label="Close"></i>
+        </div>
+        <div class="d-flex flex-column justify-content-center flex-grow-1">
+            <ngb-carousel [activeId]="activeIndex" [interval]="7000" [pauseOnHover]="true" [pauseOnFocus]="true">
+                <ng-template ngbSlide *ngFor="let imgName of portfolioImages; index as i" [id]="'img'+i">
+                    <div class="img-wrapper d-flex justify-content-center">
+                        <img class="portfolio-img" [src]="'/assets/' + imgName" alt="image {{i + 1}}" />
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+</ng-template>
