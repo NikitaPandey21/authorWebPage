@@ -1,0 +1,174 @@
+.app-container {
+    height: 100vh;
+    color: #c3c3c3;
+
+    .app-header {
+        background-color: #111;
+        box-shadow: 0px 6px 16px #222222aa;
+        height: 100px;
+
+        .app-author {
+            width: 300px;
+        }
+
+        .app-menu {
+            .list-inline {
+                .list-inline-item {
+                    margin: 0 1rem;
+
+                    a {
+                        text-decoration: none;
+                        color: #c3c3c3;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: #c3c3c3aa;
+                        }
+                    }
+                }
+            }
+        }
+
+        .app-link {
+            width: 300px;
+
+            .list-inline {
+                .list-inline-item {
+                    a {
+                        color: #c3c3c3;
+
+                        &:hover {
+                            color: #c3c3c3aa;
+                        }
+                    }
+
+                    margin: 0 0 0 0.875rem;
+                }
+            }
+        }
+    }
+
+    .app-content {
+        overflow-x: auto;
+
+        #about-author {
+            .author-img {
+                width: 500px;
+
+                img {
+                    border-radius: 8px;
+                }
+            }
+
+            .about-author-text {
+                width: 700px;
+
+                .portfolio-link {
+                    text-decoration: none;
+                    color: #C5B78E;
+                    font-weight: 600;
+
+                    &:hover {
+                        color: #C5B78EAA;
+                        border-bottom: 2px solid #C5B78EAA;
+                    }
+                }
+            }
+        }
+
+        #book-section {
+            .book-title {
+                -webkit-animation-name: color-transition;
+                animation-name: color-transition;
+                -webkit-animation-duration: 10s;
+                animation-duration: 10s;
+                -webkit-animation-direction: alternate;
+                animation-direction: alternate;
+                -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+                -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+
+            .book-info {
+
+                .book-story {
+                    width: 600px;
+
+                    .book-desc {
+                        width: 500px;
+                    }
+                }
+
+                .book-img {
+                    width: 600px;
+
+                    img {
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+
+        #author-portfolio {}
+
+        .app-footer {
+            font-size: 0.75rem;
+            background-color: #111;
+            box-shadow: 0px -6px 16px #222222aa;
+        }
+    }
+}
+
+
+@-webkit-keyframes color-transition {
+    0% {
+        color: #F97973;
+    }
+
+    20% {
+        color: #C3C3C3;
+    }
+
+    40% {
+        color: #FB7F4E;
+    }
+
+    60% {
+        color: #89CBCA;
+    }
+
+    80% {
+        color: #EEC16B;
+    }
+
+    100% {
+        color: #8597AC;
+    }
+}
+
+@keyframes color-transition {
+    0% {
+        color: #F97973;
+    }
+
+    20% {
+        color: #C3C3C3;
+    }
+
+    40% {
+        color: #FB7F4E;
+    }
+
+    60% {
+        color: #89CBCA;
+    }
+
+    80% {
+        color: #EEC16B;
+    }
+
+    100% {
+        color: #8597AC;
+    }
+}
