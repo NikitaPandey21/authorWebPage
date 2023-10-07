@@ -35,9 +35,9 @@
             <div id="about-author" class="mb-5">
                 <div class="d-flex justify-content-center my-5">
                     <div class="author-img">
-                        <img src="/assets/NP3.jpg">
+                        <img src="/assets/NP3.jpg" />
                     </div>
-                    <div class="about-author-text d-flex flex-column justify-content-center">
+                    <div class="about-author-text d-flex flex-column justify-content-center fs-5">
                         <p class="mt-2">
                             Nikita grew up in Pune, India, which has a rich historical past in the state of Maharashtra.
                             She is a software engineer and firmly believes in the power of storytelling to transport
@@ -65,10 +65,10 @@
             </div>
             <!-- Book -->
             <div id="book-section" class="my-5">
-                <div class="book-title fs-1 d-flex justify-content-center mb-5">&quot; The Day I Live For &quot;</div>
+                <div class="book-title fs-1 d-flex justify-content-center mb-5">“ The Day I Live For ”</div>
                 <div class="book-info d-flex justify-content-center">
                     <div class="book-story d-flex flex-column justify-content-center">
-                        <div class="book-desc d-flex flex-column">
+                        <div class="book-desc d-flex flex-column fs-5">
                             <p class="mt-2">
                                 Hi, this is Aman, love was the most unexpected thing that happened to me when I met
                                 Radhika. Soon we were going to get married and then on the day of our engagement all
@@ -83,20 +83,31 @@
                             <p class="mt-2">
                                 Sometimes I feel if I wasn’t part of her life, she would have been at a better place...
                             </p>
+                            <p class="mt-2">
+                                <a href="https://www.amazon.in/Day-I-Live-Nikita-Pandey/dp/8196117906"
+                                    title="Buy now on Amazon" class="buy-link fs-5" target="_blank">
+                                    <i class="bi bi-bag"></i>&nbsp;Buy Now
+                                </a>
+                            </p>
                         </div>
                     </div>
                     <div class="book-img d-flex justify-content-center">
-                        <img src="/assets/BOOK1.png">
+                        <img src="/assets/BOOK1.png" />
                     </div>
                 </div>
             </div>
             <!-- Portfolio -->
-            <div id="author-portfolio" class="my-5">
-                <div class="fs-1 d-flex justify-content-center my-5">Portfolio</div>
-                <div></div>
+            <div id="author-portfolio" class="d-flex justify-content-center my-5">
+                <div class="d-flex flex-column">
+                    <div class="fs-1 text-center my-5">Portfolio</div>
+                    <div class="portfolio-images d-flex flex-wrap my-5">
+                        <img class="portfolio-img m-2" *ngFor="let imgName of portfolioImages"
+                            [src]="'/assets/' + imgName" />
+                    </div>
+                </div>
             </div>
         </div>
-        <footer class="app-footer text-center align-items-end py-1 px-4">
+        <footer class="app-footer text-center align-items-end py-1 px-4 mt-5">
             &copy; 2023 Nikita Pandey. All rights reserved.
         </footer>
     </section>
