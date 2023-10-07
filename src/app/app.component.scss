@@ -14,6 +14,18 @@
 
             .app-author {
                 width: 300px;
+
+                .cover-link {
+
+                    text-decoration: none;
+                    color: #c3c3c3;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #c3c3c3aa;
+                    }
+
+                }
             }
 
             .app-menu {
@@ -62,6 +74,10 @@
             #cover-page {
                 .cover-bg-img {
                     height: calc(100vh - 90px);
+
+                    .cover-bg-overlay {
+                        background: rgba(0, 0, 0, 0.35);
+                    }
 
                     &.cover-bg-img-0 {
                         background: url('/assets/original/NP1.jpg');

@@ -1,7 +1,9 @@
 <div class="app-container d-flex flex-column">
     <div class="app-header-wrapper">
         <div class="app-header d-flex justify-content-between align-items-center px-4 py-4">
-            <div class="app-author d-flex justify-content-start fs-3">𝒩𝒾𝓀𝒾𝓉𝒶 𝒫𝒶𝓃𝒹𝑒𝓎</div>
+            <div class="app-author d-flex justify-content-start fs-3">
+                <a href="#cover-page" class="cover-link">𝒩𝒾𝓀𝒾𝓉𝒶 𝒫𝒶𝓃𝒹𝑒𝓎</a>
+            </div>
             <div class="app-menu">
                 <ul class="list-inline my-0 fs-6">
                     <li class="list-inline-item"><a href="#about-author">ABOUT</a></li>
@@ -39,8 +41,8 @@
                 <ngb-carousel [interval]="12000" [pauseOnHover]="false" [showNavigationArrows]="false"
                     [showNavigationIndicators]="true">
                     <ng-template ngbSlide *ngFor="let imgName of coverImages; index as i">
-                        <div class="d-flex justify-content-center p-5 cover-bg-img {{ 'cover-bg-img-' + i }}">
-                            <!-- <img [src]="'/assets/' + imgName" alt="Cover image {{i + 1}}" /> -->
+                        <div class="d-flex justify-content-center cover-bg-img {{ 'cover-bg-img-' + i }}">
+                            <div class="d-flex justify-content-center flex-grow-1 cover-bg-overlay"></div>
                         </div>
                     </ng-template>
                 </ngb-carousel>
@@ -130,7 +132,7 @@
                 <div id="author-portfolio" class="d-flex justify-content-center my-5">
                     <div class="d-flex flex-column">
                         <div class="fs-1 text-center my-5">Portfolio</div>
-                        <div class="portfolio-images d-flex flex-wrap my-5">
+                        <div class="portfolio-images d-flex flex-wrap mb-5">
                             <div class="portfolio-img-card m-2" *ngFor="let imgName of portfolioImages; index as i">
                                 <img class="portfolio-img" [src]="'/assets/' + imgName"
                                     (click)="open(carouselModal, i)" />
