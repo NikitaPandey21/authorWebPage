@@ -105,16 +105,25 @@
 
             #about-author {
                 .author-img {
-                    width: 500px;
+                    width: 600px;
 
-                    img {
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    .img-wrapper {
+                        border-radius: 500px;
+                        width: 500px;
+                        height: 500px;
+                        overflow: hidden;
+
+                        img {
+                            width: 500px;
+                            height: 650px;
+                            object-fit: cover;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        }
                     }
                 }
 
                 .about-author-text {
-                    width: 700px;
+                    width: 600px;
 
                     .portfolio-link {
                         text-decoration: none;
