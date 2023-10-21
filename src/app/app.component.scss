@@ -82,6 +82,10 @@ $tablet-width: 750px;
                 .cover-bg-img {
                     height: calc(100vh - 90px);
 
+                    @include tablet{
+                      height: 400px;
+                    }
+
                     .cover-bg-overlay {
                         background: rgba(0, 0, 0, 0.35);
                     }
@@ -90,6 +94,9 @@ $tablet-width: 750px;
                         background: url('/assets/original/NP1.jpg');
                         background-repeat: no-repeat;
                         background-size: cover;
+                        @include tablet{
+                          height: 157px;
+                        }
                         background-position-y: top;
                     }
 
@@ -97,6 +104,9 @@ $tablet-width: 750px;
                         background: url('/assets/original/NP4.jpg');
                         background-repeat: no-repeat;
                         background-size: cover;
+                        @include tablet{
+                          height: 157px;
+                        }
                         background-position-y: bottom;
                     }
 
@@ -104,6 +114,9 @@ $tablet-width: 750px;
                         background: url('/assets/original/NP5.jpg');
                         background-repeat: no-repeat;
                         background-size: cover;
+                        @include tablet{
+                          height: 157px;
+                        }
                         background-position-y: bottom;
                     }
 
