@@ -1,3 +1,10 @@
+$tablet-width: 750px;
+@mixin tablet {
+  @media screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
 .app-container {
     height: 100vh;
     color: #c3c3c3;
@@ -13,7 +20,7 @@
             box-shadow: 0px 6px 16px #333333ba;
 
             .app-author {
-                width: 300px;
+                // width: 300px;
 
                 .cover-link {
 
@@ -47,7 +54,7 @@
             }
 
             .app-link {
-                width: 300px;
+                // width: 300px;
 
                 .list-inline {
                     .list-inline-item {
@@ -106,6 +113,10 @@
             #about-author {
                 .author-img {
                     width: 600px;
+                    @include tablet{
+                      width: auto;
+                    }
+
 
                     .img-wrapper {
                         border-radius: 500px;
@@ -124,6 +135,10 @@
 
                 .about-author-text {
                     width: 600px;
+
+                    @include tablet{
+                      width: auto;
+                    }
 
                     .portfolio-link {
                         text-decoration: none;
@@ -153,12 +168,21 @@
                 }
 
                 .book-info {
+                  @include tablet{
+                    flex-direction: column-reverse;
+                  }
 
                     .book-story {
                         width: 600px;
+                        @include tablet{
+                          width: auto;
+                        }
 
                         .book-desc {
                             width: 500px;
+                            @include tablet{
+                              width: auto;
+                            }
 
                             .buy-link {
                                 font-weight: 600;
@@ -175,6 +199,9 @@
 
                     .book-img {
                         width: 600px;
+                        @include tablet{
+                          width: auto;
+                        }
 
                         img {
                             border-radius: 8px;
@@ -188,12 +215,20 @@
                 .portfolio-images {
                     width: 1200px;
 
+                    @include tablet{
+                      width: auto;
+                      justify-content: center;
+                    }
+
                     .portfolio-img-card {
                         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                         overflow: hidden;
 
                         .portfolio-img {
                             width: 284px;
+                            @include tablet{
+                              width: 200px;
+                            }
                             cursor: pointer;
                             opacity: 1;
                             transform: scale(1);
@@ -215,6 +250,13 @@
             box-shadow: 0px -6px 16px #333333ba;
         }
     }
+}
+
+.about-author-wrapper{
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 ::ng-deep {
