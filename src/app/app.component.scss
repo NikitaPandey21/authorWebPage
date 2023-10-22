@@ -1,6 +1,13 @@
-$tablet-width: 850px;
+$tablet-width: 992px;
+$desktop-large: 1400px;
 @mixin tablet {
   @media screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin maxDesktop {
+  @media screen and (max-width: #{$desktop-large}) {
     @content;
   }
 }
@@ -82,10 +89,6 @@ $tablet-width: 850px;
                 .cover-bg-img {
                     height: calc(100vh - 90px);
 
-                    @include tablet{
-                      height: 400px;
-                    }
-
                     .cover-bg-overlay {
                         background: rgba(0, 0, 0, 0.35);
                     }
@@ -94,8 +97,10 @@ $tablet-width: 850px;
                         background: url('/assets/original/NP1.jpg');
                         background-repeat: no-repeat;
                         background-size: cover;
-                        @include tablet{
-                          height: 157px;
+                        @include maxDesktop{
+                          height: 45vw;
+                          background-size: 100vw;
+
                         }
                         background-position-y: top;
                     }
@@ -104,8 +109,11 @@ $tablet-width: 850px;
                         background: url('/assets/original/NP4.jpg');
                         background-repeat: no-repeat;
                         background-size: cover;
-                        @include tablet{
-                          height: 157px;
+                        @include maxDesktop{
+                          height: 45vw;
+                          background-size: 100vw;
+                        background-position-y: top;
+
                         }
                         background-position-y: bottom;
                     }
@@ -114,8 +122,10 @@ $tablet-width: 850px;
                         background: url('/assets/original/NP5.jpg');
                         background-repeat: no-repeat;
                         background-size: cover;
-                        @include tablet{
-                          height: 157px;
+                        @include maxDesktop{
+                          height: 45vw;
+                          background-size: 100vw;
+                        background-position-y: top;
                         }
                         background-position-y: bottom;
                     }
