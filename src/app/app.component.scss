@@ -1,4 +1,4 @@
-$tablet-width: 750px;
+$tablet-width: 850px;
 @mixin tablet {
   @media screen and (max-width: #{$tablet-width}) {
     @content;
@@ -307,6 +307,10 @@ $tablet-width: 750px;
             }
         }
     }
+}
+
+p{
+    font-family: PlaypenSans;
 }
 
 
