@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    BookDetailComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

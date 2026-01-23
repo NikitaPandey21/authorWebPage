@@ -24,3 +24,18 @@ body {
     font-family: 'PlaypenSans';
     src: url('./assets/PlaypenSans-Light.ttf');
 }
+
+$tablet-width: 992px;
+$desktop-large: 1400px;
+
+@mixin tablet {
+  @media screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin maxDesktop {
+  @media screen and (max-width: #{$desktop-large}) {
+    @content;
+  }
+}

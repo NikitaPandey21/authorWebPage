@@ -1,0 +1,23 @@
+.book-detail {
+  display: flex;
+  gap: 4rem;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  .book-image img {
+    width: 400px;
+    border-radius: 12px;
+  }
+
+  .book-description {
+    max-width: 600px;
+
+    .buy-link {
+      color: #89CBCA;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,379 @@
+$tablet-width: 992px;
+$desktop-large: 1400px;
+@mixin tablet {
+  @media screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin maxDesktop {
+  @media screen and (max-width: #{$desktop-large}) {
+    @content;
+  }
+}
+
+.app-container {
+    height: 100vh;
+    color: #c3c3c3;
+
+    .app-header-wrapper {
+        background: url('/assets/PH1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: center;
+
+        .app-header {
+            background: rgba(0, 0, 0, 0.84);
+            box-shadow: 0px 6px 16px #333333ba;
+
+            .app-author {
+                // width: 300px;
+
+                .cover-link {
+
+                    text-decoration: none;
+                    color: #c3c3c3;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #c3c3c3aa;
+                    }
+
+                }
+            }
+
+            .app-menu {
+                .list-inline {
+                    .list-inline-item {
+                        margin: 0 1rem;
+
+                        a {
+                            text-decoration: none;
+                            color: #c3c3c3;
+
+                            &:hover {
+                                cursor: pointer;
+                                color: #c3c3c3aa;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .app-link {
+                // width: 300px;
+
+                .list-inline {
+                    .list-inline-item {
+                        a {
+                            color: #c3c3c3;
+
+                            &:hover {
+                                color: #c3c3c3aa;
+                            }
+                        }
+
+                        margin: 0 0 0 0.875rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .app-content {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+
+        .app-about {
+            #cover-page {
+                .cover-bg-img {
+                    height: calc(100vh - 90px);
+
+                    .cover-bg-overlay {
+                        background: rgba(0, 0, 0, 0.35);
+                    }
+
+                    &.cover-bg-img-0 {
+                        background: url('/assets/original/NP1.jpg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        @include maxDesktop{
+                          height: 45vw;
+                          background-size: 100vw;
+
+                        }
+                        background-position-y: top;
+                    }
+
+                    &.cover-bg-img-1 {
+                        background: url('/assets/original/NP4.jpg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        @include maxDesktop{
+                          height: 45vw;
+                          background-size: 100vw;
+                        background-position-y: top;
+
+                        }
+                        background-position-y: bottom;
+                    }
+
+                    &.cover-bg-img-2 {
+                        background: url('/assets/original/NP5.jpg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        @include maxDesktop{
+                          height: 45vw;
+                          background-size: 100vw;
+                        background-position-y: top;
+                        }
+                        background-position-y: bottom;
+                    }
+
+                }
+            }
+
+            #about-author {
+                .author-img {
+                    width: 600px;
+                    @include tablet{
+                      width: auto;
+                    }
+
+
+                    .img-wrapper {
+                        border-radius: 500px;
+                        width: 500px;
+                        height: 500px;
+                        overflow: hidden;
+
+                        @include tablet{
+                          width: auto;
+                          height: 400px;
+                          border-radius: 50%;
+                        }
+
+                        img {
+                            width: 500px;
+                            height: 650px;
+                            object-fit: cover;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                            @include tablet{
+                              height: 100%;
+                              width: auto;
+                            }
+                        }
+                    }
+                }
+
+                .about-author-text {
+                    width: 600px;
+
+                    @include tablet{
+                      width: auto;
+                    }
+
+                    .portfolio-link {
+                        text-decoration: none;
+                        color: #C5B78E;
+                        font-weight: 600;
+
+                        &:hover {
+                            color: #C5B78EAA;
+                            border-bottom: 2px solid #C5B78EAA;
+                        }
+                    }
+                }
+            }
+
+            #book-section {
+                .book-title {
+                    -webkit-animation-name: color-transition;
+                    animation-name: color-transition;
+                    -webkit-animation-duration: 10s;
+                    animation-duration: 10s;
+                    -webkit-animation-direction: alternate;
+                    animation-direction: alternate;
+                    -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite;
+                    -webkit-animation-timing-function: linear;
+                    animation-timing-function: linear;
+                }
+
+                .book-info {
+                  @include tablet{
+                    flex-direction: column-reverse;
+                  }
+
+                    .book-story {
+                        width: 600px;
+                        @include tablet{
+                          width: auto;
+                        }
+
+                        .book-desc {
+                            width: 500px;
+                            @include tablet{
+                              width: auto;
+                            }
+
+                            .buy-link {
+                                font-weight: 600;
+                                text-decoration: none;
+                                color: #89CBCA;
+
+                                &:hover {
+                                    color: #89CBCAAA;
+                                    border-bottom: 2px solid #89CBCAAA;
+                                }
+                            }
+                        }
+                    }
+
+                    .book-img {
+                        width: 600px;
+                        @include tablet{
+                          width: auto;
+                        }
+
+                        img {
+                            border-radius: 8px;
+                            width: 500px;
+                            height: 600px;
+                        }
+                    }
+                }
+            }
+
+            #author-portfolio {
+
+                .portfolio-images {
+                    width: 1200px;
+
+                    @include tablet{
+                      width: auto;
+                      justify-content: center;
+                    }
+
+                    .portfolio-img-card {
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        overflow: hidden;
+
+                        .portfolio-img {
+                            width: 284px;
+                            @include tablet{
+                              width: 200px;
+                            }
+                            cursor: pointer;
+                            opacity: 1;
+                            transform: scale(1);
+                            transition: 0.5s;
+
+                            &:hover {
+                                opacity: 0.67;
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .app-footer {
+            font-size: 1rem;
+            background-color: #111;
+            box-shadow: 0px -6px 16px #333333ba;
+        }
+    }
+}
+
+.about-author-wrapper{
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+::ng-deep {
+    .modal-fullscreen {
+        .modal-content {
+            background: transparent;
+        }
+    }
+
+    .modal-backdrop {
+        opacity: 0.8 !important;
+    }
+
+    .modal-body {
+        .close-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #c3c3c3;
+        }
+
+        .img-wrapper {
+            .portfolio-img {
+                box-shadow: 0 1rem 2rem 0 rgba(128, 128, 128, 0.2), 0 1rem 2rem 0 rgba(128, 128, 128, 0.19);
+            }
+        }
+    }
+}
+
+p{
+    font-family: PlaypenSans;
+}
+
+
+@-webkit-keyframes color-transition {
+    0% {
+        color: #F97973;
+    }
+
+    20% {
+        color: #C3C3C3;
+    }
+
+    40% {
+        color: #FB7F4E;
+    }
+
+    60% {
+        color: #89CBCA;
+    }
+
+    80% {
+        color: #EEC16B;
+    }
+
+    100% {
+        color: #8597AC;
+    }
+}
+
+@keyframes color-transition {
+    0% {
+        color: #F97973;
+    }
+
+    20% {
+        color: #C3C3C3;
+    }
+
+    40% {
+        color: #FB7F4E;
+    }
+
+    60% {
+        color: #89CBCA;
+    }
+
+    80% {
+        color: #EEC16B;
+    }
+
+    100% {
+        color: #8597AC;
+    }
+}

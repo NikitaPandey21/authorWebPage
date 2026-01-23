@@ -1,0 +1,70 @@
+/* ===== ABOUT PAGE ===== */
+
+section.container {
+  max-width: 820px;           /* readable line length */
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  color: #e0e0e0;
+}
+
+/* Page heading */
+section.container h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #f2f2f2;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* Subtle underline under heading */
+section.container h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 1rem auto 0;
+  background: #c5b78e;
+  border-radius: 2px;
+}
+
+/* Paragraph text */
+section.container p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 1.6rem;
+  color: #d0d0d0;
+}
+
+/* Highlighted book name */
+section.container strong {
+  color: #c5b78e;
+  font-weight: 600;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  section.container {
+    padding: 2.5rem 1.25rem;
+  }
+
+  section.container h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+  section.container {
+    padding: 2rem 1rem;
+  }
+
+  section.container h1 {
+    font-size: 1.8rem;
+  }
+
+  section.container p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}

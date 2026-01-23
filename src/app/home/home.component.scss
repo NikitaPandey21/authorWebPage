@@ -1,0 +1,207 @@
+
+/* ===== Carousel Container ===== */
+#cover-page {
+  width: 100%;
+}
+
+/* 16:9 responsive box */
+.cover-bg-img {
+  position: relative;
+  width: 100%;
+  height: 70vh; 
+  max-height: 650px;
+  // aspect-ratio: 16 / 9;   /* 🔥 THIS fixes responsiveness */
+  overflow: hidden;
+}
+
+/* Image behavior */
+.cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fills container */
+  // object-position: center; /* crop equally top & bottom */
+  object-position: center 35%;
+}
+
+/* Overlay */
+.cover-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .cover-bg-img {
+    // height: calc(100vw * (16 / 9));  /* maintains 16:9 ratio */
+    max-height: 30vh;               /* prevents it from becoming too tall */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;              /* fills without blank space */
+    // object-position: center center; /* crops equally */
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .cover-bg-img {
+    // height: 30vh;
+    max-height: 20vh; 
+  }
+
+  .cover-img {
+    object-position: center 25%;
+  }
+}
+ 
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .cover-bg-img {
+    max-height: 35vh;   // reduce cropping on iPad Pro
+  }
+}
+
+// About
+
+#about-author {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+
+  /* Tablet & below */
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .author-img {
+    width: 600px;
+
+    @media screen and (max-width: 992px) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .img-wrapper {
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      @media screen and (max-width: 992px) {
+        width: 280px;
+        height: 280px;
+      }
+
+      img {
+        width: 100%;
+        height: 120%;
+        object-fit: cover;
+        object-position: center 15%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        @media screen and (max-width: 992px) {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .about-author-text {
+    width: 600px;
+
+    @media screen and (max-width: 992px) {
+      width: 100%;
+      text-align: center;
+      padding: 0 1rem;
+    }
+  }
+}
+
+
+.about-preview {
+  max-width: 500px;
+  line-height: 1.6;
+  color: #c3c3c3;
+}
+
+/* Read more button */
+.read-more-btn {
+  display: inline-block;
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: 600;
+  color: #C5B78E;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #C5B78EAA;
+    border-bottom: 2px solid #C5B78EAA;
+  }
+}
+
+/* Tablet & Mobile */
+@media (max-width: 992px) {
+  .about-author-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .read-more-btn {
+    align-self: center;
+  }
+}
+
+
+
+// #about-author {
+//   .author-img {
+//     width: 600px;
+
+//     .img-wrapper {
+//       width: 500px;
+//       height: 500px;
+//       border-radius: 50%;
+//       overflow: hidden;
+
+//       img {
+//         object-fit: cover;
+//         box-shadow: 0 4px 20px rgba(0,0,0,.3);
+//       }
+//     }
+//   }
+
+//   .about-author-text {
+//     width: 600px;
+
+//     .portfolio-link {
+//       color: #C5B78E;
+//       font-weight: 600;
+//       text-decoration: none;
+//     }
+//   }
+
+// #book-section {
+//   .book-title {
+//     animation: color-transition 10s linear infinite alternate;
+//   }
+
+//   .book-img img {
+//     width: 300px;
+//     border-radius: 8px;
+//     cursor: pointer;
+//     transition: transform .3s;
+//   }
+
+//   .book-img img:hover {
+//     transform: scale(1.05);
+//   }
+// }
+// }

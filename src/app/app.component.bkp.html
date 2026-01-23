@@ -1,0 +1,203 @@
+<div class="app-container d-flex flex-column">
+    <div class="app-header-wrapper">
+        <div class="app-header d-flex justify-content-between align-items-center px-4 py-4">
+            <div class="app-author d-flex justify-content-start fs-3">
+                <a href="#cover-page" class="cover-link">𝒩𝒾𝓀𝒾𝓉𝒶 𝒫𝒶𝓃𝒹𝑒𝓎</a>
+            </div>
+            <div class="app-menu">
+                <ul class="list-inline my-0 fs-6">
+                    <li class="list-inline-item"><a href="#about-author">ABOUT</a></li>
+                    <li class="list-inline-item"><a href="#book-section">BOOK</a></li>
+                    <li class="list-inline-item"><a href="#author-portfolio">PORTFOLIO</a></li>
+                </ul>
+            </div>
+            <div class="app-link d-flex justify-content-end">
+                <ul class="list-inline my-0 fs-4">
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/nikita.pandey.77" target="_blank" title="Follow on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/_nikki.98._/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank"
+                            title="Follow on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/nikita-pandey-738148169" target="_blank"
+                            title="Follow on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="app-content d-flex flex-column flex-grow-1">
+        <div class="app-about d-flex flex-column flex-grow-1 pb-4">
+            <!-- Cover Page -->
+            <div id="cover-page">
+                <ngb-carousel [interval]="12000" [pauseOnHover]="false" [showNavigationArrows]="false"
+                    [showNavigationIndicators]="true">
+                    <ng-template ngbSlide *ngFor="let imgName of coverImages; index as i">
+                        <div class="d-flex justify-content-center cover-bg-img {{ 'cover-bg-img-' + i }}">
+                            <div class="d-flex justify-content-center flex-grow-1 cover-bg-overlay"></div>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+            <div class="px-4">
+                <!-- Author -->
+                <div id="about-author" class="mb-5">
+                    <div class="d-flex flex-column justify-content-center mb-5">
+                        <div class="fs-1 text-center my-5">About Nikita</div>
+                        <div class="d-flex justify-content-center mb-5 about-author-wrapper">
+                            <div class="author-img d-flex flex-column justify-content-center">
+                                <div class="img-wrapper">
+                                    <img src="/assets/NP3.jpg" />
+                                </div>
+                            </div>
+                            <div class="about-author-text d-flex flex-column justify-content-center fs-5">
+                                <p class="mt-2">
+                                    Nikita grew up in Pune, India, which has a rich historical past in the state of
+                                    Maharashtra.
+                                    She is a software engineer and firmly believes in the power of storytelling to
+                                    transport
+                                    readers to new worlds, challenge their perspectives, and evoke a range of emotions.
+                                </p>
+                                <p class="mt-2">
+                                    Nikita debuted in the world of literature with the fiction novel <strong>“The Day I
+                                        Live
+                                        For”</strong> which is a romantic mystery. With a keen eye for detail and a
+                                    knack
+                                    for
+                                    creating authentic dialogue, she invites readers on an unforgettable literary
+                                    journey.
+                                </p>
+                                <p class="mt-2">
+                                    Apart from being a software engineer and an author, Nikita holds a great interest in
+                                    music.
+                                    She is also a classical singer.
+                                </p>
+                                <p class="mt-2">
+                                    <strong>“The Day I Live For”</strong> is Nikita’s first foray into the world of
+                                    published
+                                    fiction, and she is excited to share this story with readers everywhere. She looks
+                                    forward
+                                    to connecting with the literary community and embarking on this new chapter of her
+                                    writing
+                                    career.
+                                </p>
+                                <p class="mt-2">
+                                    <a href="#author-portfolio" class="portfolio-link">VIEW PORTFOLIO</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book -->
+                <div id="book-section" class="py-5">
+                    <div class="book-title fs-1 d-flex justify-content-center pb-5">“ Unconfessed Love ”</div>
+                    <div class="book-info d-flex justify-content-center pt-5">
+                        <div class="book-story d-flex flex-column justify-content-center">
+                            <div class="book-desc d-flex flex-column fs-5">
+                                <p class="mt-2">
+                                    Harsh Rao has endured a deeply traumatic past, marked by an incredibly painful relationship that left him scarred and reluctant to trust in love again. Forced into an arranged marriage with a woman he had never met, Harsh finds himself trapped between the ghosts of his past and the fragile hopes for a future filled with love and happiness.
+                                </p>
+                                <p class="mt-2">
+                                    Just as Harsh begins to heal, slowly piecing his life back together and rediscovering the meaning of love and care, his past resurfaces in the most unexpected way, threatening to shatter the peace he has fought so hard to achieve. The return of these haunting memories forces Harsh into a difficult choice:
+                                </p>
+                                <p class="mt-2">
+                                    Will he protect the newfound love that has brought light back into his life, or will he be compelled to let go of it all in the face of overwhelming odds?
+                                </p>
+                                <p class="mt-2">
+                                    Will Harsh find the strength to protect his love and his future, or will the shadows of his past consume him once more?
+                                </p>
+                                <p class="mt-2">
+                                    <!-- <a href="https://www.amazon.in/Day-I-Live-Nikita-Pandey/dp/8196117906" -->
+                                    <!-- <a href="https://rzp.io/l/nikitapandey" -->
+                                    <a href="https://www.amazon.in/dp/B0DGCKK2S6"
+                                        title="Buy now on Amazon" class="buy-link fs-5" target="_blank">
+                                        <i class="bi bi-bag"></i>&nbsp;Buy Now
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="book-img d-flex justify-content-center">
+                            <img src="/assets/BOOK2.png" />
+                        </div>
+                    </div>
+                </div>
+                <div id="book-section" class="py-5">
+                    <div class="book-title fs-1 d-flex justify-content-center pb-5">“ The Day I Live For ”</div>
+                    <div class="book-info d-flex justify-content-center pt-5">
+                        <div class="book-story d-flex flex-column justify-content-center">
+                            <div class="book-desc d-flex flex-column fs-5">
+                                <p class="mt-2">
+                                    Hi, this is Aman, love was the most unexpected thing that happened to me when I met
+                                    Radhika. Soon we were going to get married and then on the day of our engagement all
+                                    dreams broke at once.
+                                </p>
+                                <p class="mt-2">
+                                    She was poisoned on the day of our engagement.
+                                </p>
+                                <p class="mt-2">
+                                    Was it my love for her that tried to kill her? Or something else?
+                                </p>
+                                <p class="mt-2">
+                                    Sometimes I feel if I wasn’t part of her life, she would have been at a better
+                                    place...
+                                </p>
+                                <p class="mt-2">
+                                    <!-- <a href="https://www.amazon.in/Day-I-Live-Nikita-Pandey/dp/8196117906" -->
+                                    <!-- <a href="https://rzp.io/l/nikitapandey" -->
+                                    <a href="https://rzp.io/l/authornikita"
+                                        title="Buy now on Amazon" class="buy-link fs-5" target="_blank">
+                                        <i class="bi bi-bag"></i>&nbsp;Buy Now
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="book-img d-flex justify-content-center">
+                            <img src="/assets/BOOK1.png" />
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio -->
+                <div id="author-portfolio" class="d-flex justify-content-center my-5">
+                    <div class="d-flex flex-column">
+                        <div class="fs-1 text-center my-5">Portfolio</div>
+                        <div class="portfolio-images d-flex flex-wrap mb-5">
+                            <div class="portfolio-img-card m-2" *ngFor="let imgName of portfolioImages; index as i">
+                                <img class="portfolio-img" [src]="'/assets/' + imgName"
+                                    (click)="open(carouselModal, i)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer text-center align-items-end py-2 px-4 mt-5">
+            &copy; 2025 Nikita Pandey. All rights reserved.
+        </footer>
+    </section>
+</div>
+
+<ng-template #carouselModal let-modal>
+    <div class="modal-body d-flex flex-column">
+        <div class="d-flex justify-content-end">
+            <i class="close-icon bi bi-x-lg" ngbAutofocus (click)="modal.dismiss('Close modal')" aria-label="Close"></i>
+        </div>
+        <div class="d-flex flex-column justify-content-center flex-grow-1">
+            <ngb-carousel [activeId]="activeIndex" [interval]="7000" [pauseOnHover]="true" [pauseOnFocus]="true">
+                <ng-template ngbSlide *ngFor="let imgName of portfolioImages; index as i" [id]="'img'+i">
+                    <div class="img-wrapper d-flex justify-content-center p-5">
+                        <img class="portfolio-img" [src]="'/assets/' + imgName" alt="Portfolio image {{i + 1}}" />
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+</ng-template>
