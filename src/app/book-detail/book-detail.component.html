@@ -1,26 +1,121 @@
-<section class="container my-5" *ngIf="book">
+<div id="book-section" class="py-5">
+  <div class="book-info reverse d-flex justify-content-center gap-5">
 
-  <div class="row align-items-center g-5">
-
-    <div class="col-md-5 text-center">
-      <img [src]="book.image" class="book-detail-img" />
+    <!-- Book Image -->
+    <div class="book-img d-flex justify-content-center">
+      <img src="/assets/BOOK2.png" alt="Unconfessed Love book cover" />
     </div>
 
-    <div class="col-md-7">
-      <h1>{{ book.title }}</h1>
+    <!-- Book Content -->
+    <div class="book-story d-flex flex-column justify-content-center">
 
-      <p class="fs-5 text-muted mt-4">
-        {{ book.description }}
-      </p>
+      <!-- Title -->
+      <h1 class="book-title fw-bold mb-2" id="unconfessed-love">
+        Unconfessed Love
+      </h1>
 
-      <a
-        [href]="book.buyLink"
-        target="_blank"
-        class="btn btn-primary mt-4">
-        <i class="bi bi-bag"></i> Buy Now
-      </a>
+      <!-- Subtitle -->
+      <h2 class="book-subtitle fw-bold mb-4">
+        Does true love demand confession?
+      </h2>
+
+      <!-- Description -->
+      <div class="book-desc fs-5">
+        <p>
+          Harsh Rao has endured a deeply traumatic past, marked by an incredibly
+          painful relationship that left him scarred and reluctant to trust in
+          love again. Forced into an arranged marriage with a woman he had never
+          met, Harsh finds himself trapped between the ghosts of his past and the
+          fragile hopes for a future filled with love and happiness.
+        </p>
+
+        <p>
+          Just as Harsh begins to heal, slowly piecing his life back together and
+          rediscovering the meaning of love and care, his past resurfaces in the
+          most unexpected way, threatening to shatter the peace he has fought so
+          hard to achieve.
+        </p>
+
+        <p>
+          Will he protect the newfound love that has brought light back into his
+          life, or will he be compelled to let go of it all in the face of
+          overwhelming odds?
+        </p>
+
+        <p>
+          Will Harsh find the strength to protect his love and his future, or will
+          the shadows of his past consume him once more?
+        </p>
+
+        <!-- Buy Button -->
+        <a
+          href="https://www.amazon.in/dp/B0DGCKK2S6"
+          target="_blank"
+          class="buy-link fs-5 mt-3 d-inline-block"
+          title="Buy now on Amazon"
+        >
+          <i class="bi bi-bag"></i> Buy Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="book-section" class="py-5">
+  <div class="book-info d-flex justify-content-center gap-5">
+
+    <!-- Book Content (LEFT) -->
+    <div class="book-story d-flex flex-column justify-content-center">
+
+      <!-- Title -->
+      <h1 class="book-title fw-bold mb-2" id="the-day-i-live-for">
+        The Day I Live For
+      </h1>
+
+      <!-- Subtitle -->
+      <h2 class="book-subtitle fw-bold mb-4">
+        A love story that turned into a mystery
+      </h2>
+
+      <!-- Description -->
+      <div class="book-desc fs-5">
+        <p>
+          Hi, this is Aman. Love was the most unexpected thing that happened to me
+          when I met Radhika. Soon we were going to get married, and then on the day
+          of our engagement, all dreams broke at once.
+        </p>
+
+        <p>
+          She was poisoned on the day of our engagement.
+        </p>
+
+        <p>
+          Was it my love for her that tried to kill her? Or was it something else?
+        </p>
+
+        <p>
+          Sometimes I feel if I wasn’t part of her life, she would have been at a
+          better place...
+        </p>
+
+        <!-- Buy Button -->
+        <a
+          href="https://rzp.io/l/authornikita"
+          target="_blank"
+          class="buy-link fs-5 mt-3 d-inline-block"
+          title="Buy now"
+        >
+          <i class="bi bi-bag"></i> Buy Now
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Book Image (RIGHT) -->
+    <div class="book-img d-flex justify-content-center align-items-center">
+      <img src="/assets/BOOK1.png" alt="The Day I Live For book cover" />
     </div>
 
   </div>
-
-</section>
+</div>

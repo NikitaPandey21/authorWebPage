@@ -5,9 +5,13 @@
 html,
 body {
     background-color: #232425;
+    height: 100%;
+    margin: 0;
 }
 
 ::-webkit-scrollbar {
+    height: 100%;
+    margin: 0;
     width: 4px;
 }
 

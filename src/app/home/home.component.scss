@@ -161,47 +161,48 @@
 
 
 
-// #about-author {
-//   .author-img {
-//     width: 600px;
+.books {
 
-//     .img-wrapper {
-//       width: 500px;
-//       height: 500px;
-//       border-radius: 50%;
-//       overflow: hidden;
+  .col-md-4 {
+    padding: 0;              // remove column box feel
+  }
 
-//       img {
-//         object-fit: cover;
-//         box-shadow: 0 4px 20px rgba(0,0,0,.3);
-//       }
-//     }
-//   }
+  .book-cover {
+    display: block;
+    margin: 0 auto;
 
-//   .about-author-text {
-//     width: 600px;
+    width: 220px;
+    height: auto;
 
-//     .portfolio-link {
-//       color: #C5B78E;
-//       font-weight: 600;
-//       text-decoration: none;
-//     }
-//   }
+    cursor: pointer;
+    border-radius: 4px;
+    background: transparent; // IMPORTANT
 
-// #book-section {
-//   .book-title {
-//     animation: color-transition 10s linear infinite alternate;
-//   }
+    /* Clean floating 3D effect */
+    transform: perspective(900px) rotateY(-6deg);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 
-//   .book-img img {
-//     width: 300px;
-//     border-radius: 8px;
-//     cursor: pointer;
-//     transition: transform .3s;
-//   }
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.35);
 
-//   .book-img img:hover {
-//     transform: scale(1.05);
-//   }
-// }
-// }
+    &:hover {
+      transform: perspective(900px) rotateY(0deg) scale(1.06);
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .books .book-cover {
+    width: 200px;
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .books .book-cover {
+    width: 170px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  }
+}

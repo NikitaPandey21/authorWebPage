@@ -1,23 +1,163 @@
-.book-detail {
-  display: flex;
-  gap: 4rem;
+$tablet-width: 992px;
+$desktop-large: 1400px;
 
-  @include tablet {
-    flex-direction: column;
+@mixin tablet {
+  @media screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin maxDesktop {
+  @media screen and (max-width: #{$desktop-large}) {
+    @content;
+  }
+}
+
+#book-section {
+  padding: 6rem 0;
+  position: relative;
+
+  /* ===== TITLE ===== */
+  .book-title {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    animation: color-transition 10s linear infinite alternate;
   }
 
-  .book-image img {
-    width: 400px;
-    border-radius: 12px;
+  .book-subtitle {
+    font-weight: 600;
+    opacity: 0.85;
+    line-height: 1.4;
   }
 
-  .book-description {
-    max-width: 600px;
+  /* ===== LAYOUT ===== */
+  .book-info {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
 
-    .buy-link {
-      color: #89CBCA;
-      font-weight: 600;
-      text-decoration: none;
+    // flex-direction: row;
+
+    // &.reverse {
+    //   /* Image | Text */
+    //   flex-direction: row-reverse;
+    // }
+
+    @include tablet {
+      flex-direction: column-reverse;
+      gap: 3rem;
+      text-align: center;
+
+      &.reverse {
+        flex-direction: column;
+      }
     }
+
+    /* ===== STORY ===== */
+    .book-story {
+      width: 600px;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      .book-desc {
+        width: 520px;
+        line-height: 1.8;
+        color: #d0d0d0;
+
+        @include tablet {
+          width: 100%;
+        }
+
+        p {
+          margin-bottom: 1.2rem;
+        }
+
+        .buy-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-top: 1.5rem;
+
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          text-decoration: none;
+          color: #89CBCA;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #89CBCA;
+            transition: width 0.3s ease;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+
+          &:hover {
+            color: #89cbcaaa;
+          }
+        }
+      }
+    }
+
+    /* ===== IMAGE ===== */
+    .book-img {
+      width: 600px;
+      display: flex;
+      justify-content: center;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      img {
+        width: 480px;
+        height: auto;
+        border-radius: 12px;
+
+        /* premium depth */
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.35),
+          0 10px 20px rgba(0, 0, 0, 0.2);
+
+        transform: perspective(1000px) rotateY(-4deg);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        &:hover {
+          transform: perspective(1000px) rotateY(0deg) scale(1.04);
+          box-shadow:
+            0 30px 60px rgba(0, 0, 0, 0.45),
+            0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        @include tablet {
+          transform: none;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+/* ===== TITLE COLOR ANIMATION ===== */
+@keyframes color-transition {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #c5b78e;
+  }
+  100% {
+    color: #89cbca;
   }
 }

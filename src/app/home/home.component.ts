@@ -30,8 +30,8 @@ export class HomeComponent {
     });
   }
   
-  goToBook(bookId: string) {
-    console.log('books')
-    this.router.navigate(['/book', bookId]);
+  goToBook(slug: string) {
+    this.router.navigate(['/books'], { fragment: slug });
   }
+
 }
