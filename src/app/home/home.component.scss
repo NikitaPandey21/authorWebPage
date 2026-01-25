@@ -33,6 +33,31 @@
 //   background: rgba(0, 0, 0, 0.35);
 // }
 
+#cover-page {
+  min-height: 100vh;   // 👈 IMPORTANT
+  width: 100%;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url('/assets/HomeBackground3.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* ⚠️ Optional — remove if issues persist */
+  background-attachment: fixed;
+
+  color: #c3c3c3;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
 .carousel-wrapper {
   width: 100%;
   height: 60vh;
