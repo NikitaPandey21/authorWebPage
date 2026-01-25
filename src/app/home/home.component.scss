@@ -1,208 +1,488 @@
+// /* ===== Carousel Container ===== */
+// #cover-page {
+//   width: 100%;
+// }
 
-/* ===== Carousel Container ===== */
-#cover-page {
-  width: 100%;
-}
+// /* 16:9 responsive box */
+// .cover-bg-img {
+//   position: relative;
+//   width: 100%;
+//   height: 70vh;
+//   max-height: 650px;
+//   overflow: hidden;
+// }
 
-/* 16:9 responsive box */
-.cover-bg-img {
-  position: relative;
+// /* Image behavior */
+// .cover-img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   object-position: center 35%;
+//   transition: transform 0.6s  ease-in-out;
+// }
+
+// .cover-bg-img:hover .cover-img {
+//   transform: scale(1.12); /* zoom effect */
+// }
+
+
+// /* Overlay */
+// .cover-bg-overlay {
+//   position: absolute;
+//   inset: 0;
+//   background: rgba(0, 0, 0, 0.35);
+// }
+
+.carousel-wrapper {
   width: 100%;
-  height: 70vh; 
-  max-height: 650px;
-  // aspect-ratio: 16 / 9;   /* 🔥 THIS fixes responsiveness */
+  height: 60vh;
+  max-height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
-/* Image behavior */
-.cover-img {
+.carousel-track {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* fills container */
-  // object-position: center; /* crop equally top & bottom */
-  object-position: center 35%;
 }
 
-/* Overlay */
-.cover-bg-overlay {
+/* BASE SLIDE */
+.carousel-slide {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+
+  transition:
+    transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+    // filter 0.6s ease,
+    opacity 0.6s ease;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
 }
 
-/* Tablet */
-@media (max-width: 992px) {
-  .cover-bg-img {
-    // height: calc(100vw * (16 / 9));  /* maintains 16:9 ratio */
-    max-height: 30vh;               /* prevents it from becoming too tall */
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .cover-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;              /* fills without blank space */
-    // object-position: center center; /* crops equally */
-  }
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Mobile */
-@media (max-width: 576px) {
-  .cover-bg-img {
-    // height: 30vh;
-    max-height: 20vh; 
-  }
+/* POSITIONS */
+.left {
+  left: 50%;
+  transform: translate(-160%, -50%) scale(0.85);
+  filter: blur(4px);
+  opacity: 0.6;
+  z-index: 1;
+}
 
-  .cover-img {
-    object-position: center 25%;
-  }
+.center {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  filter: blur(0);
+  opacity: 1;
+  z-index: 3;
 }
- 
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .cover-bg-img {
-    max-height: 35vh;   // reduce cropping on iPad Pro
-  }
+
+.right {
+  left: 50%;
+  transform: translate(60%, -50%) scale(0.85);
+  filter: blur(4px);
+  opacity: 0.6;
+  z-index: 1;
 }
+
+/* 🔁 ANIMATION STATE */
+// .carousel-track.animate {
+//   .left {
+//     transform: translate(-1000%, -50%) scale(1.18); // LEFT → CENTER
+//     filter: blur(0);
+//     opacity: 1;
+//     z-index: 3;
+//   }
+
+//   .center {
+//     transform: translate(60%, -50%) scale(0.85); // CENTER → RIGHT
+//     filter: blur(4px);
+//     opacity: 0.6;
+//     z-index: 3;
+//   }
+
+//   .right {
+//     transform: translate(-160%, -50%) scale(0.85); // RIGHT → LEFT
+//     filter: blur(4px);
+//     opacity: 0.6;
+//     z-index: 3;
+//   }
+// }
+
 
 // About
 
+/* ================================
+   ABOUT SECTION – PREMIUM AUTHOR
+================================ */
+
+.about-short {
+  // padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card feel */
+.about-card {
+  width: 100%;
+  max-width: 1100px;   // 🔥 keeps it elegant & centered
+  margin: 0 auto;
+  position: relative;
+  padding: 4rem 3rem;
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(197, 183, 142, 0.12),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================
+   LAYOUT
+================================ */
 #about-author {
   display: flex;
-  gap: 4rem;
   align-items: center;
+  text-align: center;
+  gap: 4rem;
+  font-family: 'Inter', sans-serif;
 
-  /* Tablet & below */
-  @media screen and (max-width: 992px) {
+  @media (max-width: 992px) {
     flex-direction: column;
-    gap: 2rem;
-  }
-
-  .author-img {
-    width: 600px;
-
-    @media screen and (max-width: 992px) {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .img-wrapper {
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      overflow: hidden;
-
-      @media screen and (max-width: 992px) {
-        width: 280px;
-        height: 280px;
-      }
-
-      img {
-        width: 100%;
-        height: 120%;
-        object-fit: cover;
-        object-position: center 15%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-        @media screen and (max-width: 992px) {
-          height: 100%;
-        }
-      }
-    }
-  }
-
-  .about-author-text {
-    width: 600px;
-
-    @media screen and (max-width: 992px) {
-      width: 100%;
-      text-align: center;
-      padding: 0 1rem;
-    }
+    gap: 2.5rem;
+    padding: 2rem 1rem;
   }
 }
 
-
-.about-preview {
-  max-width: 500px;
-  line-height: 1.6;
-  color: #c3c3c3;
-}
-
-/* Read more button */
-.read-more-btn {
-  display: inline-block;
-  align-self: flex-start;
-  text-decoration: none;
+#about-author .fs-1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;            // ⬅️ bigger title
   font-weight: 600;
-  color: #C5B78E;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
+  letter-spacing: 0.12em;
+  color: #EDE8D9;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: titleReveal 1.2s ease-out forwards;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    letter-spacing: 0.25em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.12em;
+  }
+}
+
+#about-author .fs-1::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #C5B78E, #89CBCA);
+  margin: 1.2rem auto 0;
+  animation: underlineGrow 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes underlineGrow {
+  to {
+    width: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+  #about-author .fs-1 {
+    font-size: 2.4rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+
+/* ================================
+   AUTHOR IMAGE
+================================ */
+.author-img {
+  display: flex;
+  justify-content: center;
+}
+
+.img-wrapper {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    rgba(197, 183, 142, 0.35),
+    rgba(137, 203, 202, 0.25)
+  );
+
+  padding: 6px;
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 
   &:hover {
-    color: #C5B78EAA;
-    border-bottom: 2px solid #C5B78EAA;
+    transform: scale(1.04);
+    box-shadow:
+      0 40px 90px rgba(0, 0, 0, 0.6);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 992px) {
+    width: 280px;
+    height: 280px;
+
+    img {
+      height: 100%;
+    }
   }
 }
 
-/* Tablet & Mobile */
-@media (max-width: 992px) {
-  .about-author-wrapper {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
+.read-more-btn {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #C5B78E;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
   }
 
-  .read-more-btn {
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+
+/* ================================
+   TEXT
+================================ */
+.about-author-text {
+  font-family: 'Dancing Script', cursive;
+  max-width: 560px;
+  font-size: 1.5rem;
+  line-height: 2.2;
+  color: #d6d6d6;
+
+  p {
+    margin-bottom: 1.0rem;
+    margin-left: 4rem;
+  }
+
+  @media (max-width: 992px) {
+    text-align: center;
+  }
+}
+
+/* Title */
+#about-author .fs-1 {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 3rem;
+
+  background: linear-gradient(
+    90deg,
+    #e7dbc1,
+    #c5b78e
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================================
+   READ MORE BUTTON
+================================ */
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+
+  color: #c5b78e;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(197, 183, 142, 0.4);
+
+  transition: all 0.35s ease;
+
+  &:hover {
+    color: #e7dbc1;
+    border-color: #e7dbc1;
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 992px) {
     align-self: center;
   }
 }
 
+// BOOKS
+
+
+/* ===== Books Section ===== */
 
 
 .books {
+  padding: 3rem 0;
 
-  .col-md-4 {
-    padding: 0;              // remove column box feel
-  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;            // ⬅️ bigger title
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #EDE8D9;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: titleReveal 1.2s ease-out forwards;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #C5B78E, #89CBCA);
+      margin: 1.2rem auto 0;
+      animation: underlineGrow 1s ease-out forwards;
+      animation-delay: 0.6s;
+    }
+    }
+
+
 
   .book-cover {
-    display: block;
-    margin: 0 auto;
-
-    width: 220px;
+    width: 100%;
+    max-width: 280px;
     height: auto;
-
     cursor: pointer;
-    border-radius: 4px;
-    background: transparent; // IMPORTANT
-
-    /* Clean floating 3D effect */
-    transform: perspective(900px) rotateY(-6deg);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-
-    box-shadow:
-      0 20px 40px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
 
     &:hover {
-      transform: perspective(900px) rotateY(0deg) scale(1.06);
-      box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.45);
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.55);
+    }
+  }
+
+  @media (max-width: 992px) {
+    .book-cover {
+      max-width: 240px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .book-cover {
+      max-width: 220px;
     }
   }
 }
 
-@media (max-width: 992px) {
-  .books .book-cover {
-    width: 200px;
-    transform: none;
-  }
+.section-title {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 3rem;
+
+  background: linear-gradient(
+    90deg,
+    #e7dbc1,
+    #c5b78e
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 576px) {
-  .books .book-cover {
-    width: 170px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
-  }
-}
+
+// .books {
+
+//   .col-md-4 {
+//     padding: 0;              // remove column box feel
+//   }
+
+//   .book-cover {
+//     display: block;
+//     margin: 0 auto;
+
+//     width: 220px;
+//     height: auto;
+
+//     cursor: pointer;
+//     border-radius: 4px;
+//     background: transparent; // IMPORTANT
+
+//     /* Clean floating 3D effect */
+//     transform: perspective(900px) rotateY(-6deg);
+//     transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+//     box-shadow:
+//       0 20px 40px rgba(0, 0, 0, 0.35);
+
+//     &:hover {
+//       transform: perspective(900px) rotateY(0deg) scale(1.06);
+//       box-shadow:
+//         0 30px 60px rgba(0, 0, 0, 0.45);
+//     }
+//   }
+// }
+
+// @media (max-width: 992px) {
+//   .books .book-cover {
+//     width: 200px;
+//     transform: none;
+//   }
+// }
+
+// @media (max-width: 576px) {
+//   .books .book-cover {
+//     width: 170px;
+//     box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+//   }
+// }

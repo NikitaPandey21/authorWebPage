@@ -43,3 +43,28 @@ $desktop-large: 1400px;
     @content;
   }
 }
+
+
+/* ===== Carousel Blur Transition ===== */
+.carousel-item {
+  filter: blur(4px);
+  opacity: 0;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-item.active {
+  filter: blur(0px);
+  opacity: 1;
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+  filter: blur(4px);
+  opacity: 0.6;
+}
+
+.carousel-item-next.carousel-item-left,
+.carousel-item-prev.carousel-item-right {
+  filter: blur(0px);
+  opacity: 1;
+}

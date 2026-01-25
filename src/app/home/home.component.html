@@ -1,6 +1,28 @@
 <div id="cover-page">
-  <ngb-carousel
-    [interval]="12000"
+
+  <div class="carousel-wrapper">
+  <div class="carousel-track" [class.sliding]="isSliding">
+    <div
+      *ngFor="let img of visibleImages; let i = index"
+      class="carousel-slide"
+      [ngClass]="{
+        'center': i === 1,
+        'left': i === 0,
+        'right': i === 2
+      }"
+    >
+      <img [src]="img" />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- <ngb-carousel
+    [interval]="3500" 
+    [animation]="true"
     [pauseOnHover]="true"
     [showNavigationArrows]="false"
     [showNavigationIndicators]="true">
@@ -16,7 +38,7 @@
       </div>
     </ng-template>
 
-  </ngb-carousel>
+  </ngb-carousel> -->
 
 
 
@@ -33,7 +55,7 @@
                         <img src="/assets/NP3.jpg" />
                     </div>
                 </div>
-                <div class="about-author-text d-flex flex-column justify-content-center fs-5">
+                <div class="about-author-text d-flex flex-column justify-content-center align-items-center ">
                     <p class="mt-2">
                         Nikita is a software engineer and author who believes in the power of
                         storytelling to transport readers, challenge perspectives, and evoke
