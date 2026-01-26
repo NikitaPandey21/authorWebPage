@@ -72,6 +72,7 @@ $desktop-large: 1400px;
     line-height: 1.4;
     font-size: 1.25rem;
     font-family: 'Playfair Display', serif;
+    font-style: italic;
     color: #d7d7d7;
   }
 
@@ -113,7 +114,8 @@ $desktop-large: 1400px;
 
       .book-desc {
         width: 520px;
-        line-height: 1.8;
+        font-family: 'Lora', serif;
+        line-height: 1.5;
         color: #d0d0d0;
 
         @include tablet {
@@ -122,7 +124,7 @@ $desktop-large: 1400px;
 
         p {
           margin-bottom: 1.2rem;
-          font-size: 1.05rem;
+          font-size: 1.3rem;
         }
 
         .buy-link {

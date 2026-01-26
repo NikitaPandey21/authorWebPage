@@ -69,3 +69,21 @@ $desktop-large: 1400px;
   filter: blur(0px);
   opacity: 1;
 }
+
+.email-icon {
+  color: #D44638;  // Gmail/Email red
+}
+
+.instagram-icon {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.facebook-icon {
+  color: #1877F2;  // Facebook blue
+}
+
+.linkedin-icon {
+  color: #0A66C2;
+}
