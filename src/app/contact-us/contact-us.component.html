@@ -1,0 +1,60 @@
+<section class="contact-page">
+  <div class="contact-card">
+
+    <h1 class="page-title">Contact Me</h1>
+    <p class="subtitle">
+      Let’s talk about stories, ideas, or collaborations ✨
+    </p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+
+      <div class="row">
+        <div class="field">
+          <input type="text" placeholder="First Name" formControlName="firstName">
+          <small *ngIf="submitted && contactForm.get('firstName')?.invalid">
+            First name is required
+          </small>
+        </div>
+
+        <div class="field">
+          <input type="text" placeholder="Last Name" formControlName="lastName">
+          <small *ngIf="submitted && contactForm.get('lastName')?.invalid">
+            Last name is required
+          </small>
+        </div>
+      </div>
+
+      <div class="field">
+        <input type="email" placeholder="Email Address" formControlName="email">
+        <small *ngIf="submitted && contactForm.get('email')?.invalid">
+          Enter a valid email
+        </small>
+      </div>
+
+      <div class="field">
+        <textarea rows="5" placeholder="Your Message"
+          formControlName="message"></textarea>
+        <small *ngIf="submitted && contactForm.get('message')?.invalid">
+          Message must be at least 10 characters
+        </small>
+      </div>
+
+      <button type="submit" [disabled]="loading">
+        <span *ngIf="!loading">Send Message</span>
+
+        <!-- Loader -->
+        <span *ngIf="loading" class="loader"></span>
+        </button>
+
+        <p class="success" *ngIf="success">
+        Your message has been sent 💛
+        </p>
+
+        <p class="error" *ngIf="error">
+        Something went wrong. Please try again.
+        </p>
+
+
+    </form>
+  </div>
+</section>

@@ -153,11 +153,11 @@ $desktop-large: 1400px;
   }
 
   .center {
-    transform: translate(-60%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2);
   }
 
   .right {
-    transform: translate(20%, -50%) scale(0.75);
+    transform: translate(30%, -50%) scale(0.75);
     filter: blur(3px);
   }
 }

@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,15 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     BookDetailComponent,
     AboutComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     NgbCarouselModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

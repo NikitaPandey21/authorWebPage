@@ -1,0 +1,148 @@
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+    url('/assets/original/NP1.jpg') center/cover no-repeat;
+
+  padding: 3rem 1rem;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 700px;
+  padding: 3.5rem 3rem;
+  border-radius: 28px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+
+  text-align: center;
+}
+
+/* Title */
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #f8e8b4, #c5b78e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: #cfcfcf;
+  margin-bottom: 2.5rem;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(197,183,142,0.35);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+
+  color: #eaeaea;
+  font-size: 0.95rem;
+
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #c5b78e;
+  box-shadow: 0 0 0 2px rgba(197,183,142,0.2);
+}
+
+small {
+  color: #ffb4b4;
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+}
+
+/* Button */
+button {
+  position: relative;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  background: linear-gradient(135deg, #c5b78e, #f0e6c8);
+  color: #111;
+  transition: all 0.3s ease;
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+}
+
+/* Loader spinner */
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top: 2px solid #111;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.success {
+  margin-top: 1.2rem;
+  color: #c5b78e;
+  font-size: 0.95rem;
+}
+
+.error {
+  margin-top: 1.2rem;
+  color: #ff8a8a;
+  font-size: 0.95rem;
+}
+
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(197,183,142,0.45);
+}
+
+// .success {
+//   color: #c5b78e;
+//   margin-top: 1rem;
+// }

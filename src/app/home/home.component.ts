@@ -24,6 +24,8 @@ export class HomeComponent{
 
   coverImages: string[] = [ 
     '/assets/original/NP1.jpg',
+    '/assets/original/NP2.png',
+    '/assets/original/NP3.png',
     '/assets/original/NP4.jpg',
     '/assets/original/NP5.jpg'
   ];

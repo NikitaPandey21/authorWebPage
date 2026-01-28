@@ -48,3 +48,86 @@ $desktop-large: 1400px;
 
 
 
+::ng-deep {
+    .modal-fullscreen {
+        .modal-content {
+            background: transparent;
+        }
+    }
+
+    .modal-backdrop {
+        opacity: 0.8 !important;
+    }
+
+    .modal-body {
+        .close-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #c3c3c3;
+        }
+
+        .img-wrapper {
+            .portfolio-img {
+                box-shadow: 0 1rem 2rem 0 rgba(128, 128, 128, 0.2), 0 1rem 2rem 0 rgba(128, 128, 128, 0.19);
+            }
+        }
+    }
+}
+
+p{
+    font-family: PlaypenSans;
+}
+
+
+@-webkit-keyframes color-transition {
+    0% {
+        color: #F97973;
+    }
+
+    20% {
+        color: #C3C3C3;
+    }
+
+    40% {
+        color: #FB7F4E;
+    }
+
+    60% {
+        color: #89CBCA;
+    }
+
+    80% {
+        color: #EEC16B;
+    }
+
+    100% {
+        color: #8597AC;
+    }
+}
+
+@keyframes color-transition {
+    0% {
+        color: #F97973;
+    }
+
+    20% {
+        color: #C3C3C3;
+    }
+
+    40% {
+        color: #FB7F4E;
+    }
+
+    60% {
+        color: #89CBCA;
+    }
+
+    80% {
+        color: #EEC16B;
+    }
+
+    100% {
+        color: #8597AC;
+    }
+}
