@@ -16,7 +16,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild, OnInit, OnDestroy } fr
 //   templateUrl: './home.component.html'
 // })
 
-export class HomeComponent{
+export class HomeComponent implements OnInit, OnDestroy {
   // @ViewChild('carousel') carousel!: ElementRef;
 
   constructor(private modalService: NgbModal, private router: Router) {
@@ -24,23 +24,45 @@ export class HomeComponent{
 
   coverImages: string[] = [ 
     '/assets/original/NP1.jpg',
-    '/assets/original/NP2.png',
     '/assets/original/NP3.png',
-    '/assets/original/NP4.jpg',
-    '/assets/original/NP5.jpg'
+    '/assets/original/NP5.jpg',
+    '/assets/original/BGQuote.png'
   ];
 
 currentIndex = 0;
 visibleImages: string[] = [];
 isSliding = false;
+intervalId: any; 
 
 ngOnInit() {
-  this.updateVisibleImages();
+    this.updateVisibleImages();
+    this.startAutoSlide();
+  }
 
-  setInterval(() => {
-    this.slideNext();
-  }, 3000);
+  ngOnDestroy() {
+    this.stopAutoSlide();
+  }
+
+  startAutoSlide() {
+    this.intervalId = setInterval(() => {
+      this.slideNext();
+    }, 3000);
+  }
+
+  stopAutoSlide() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+  }
+
+  onMouseEnter() {
+  this.stopAutoSlide();   // pause on hover
 }
+
+  onMouseLeave() {
+    this.startAutoSlide();  // resume when mouse leaves
+  }
 
 updateVisibleImages() {
   const prev =

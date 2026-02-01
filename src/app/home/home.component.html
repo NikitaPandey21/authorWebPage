@@ -1,6 +1,8 @@
 <div id="cover-page">
 
-  <div class="carousel-wrapper">
+  <div class="carousel-wrapper" 
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()">
   <div class="carousel-track" [class.sliding]="isSliding">
     <div
       *ngFor="let img of visibleImages; let i = index"
@@ -57,9 +59,10 @@
                 </div>
                 <div class="about-author-text d-flex flex-column justify-content-center align-items-center ">
                     <p class="mt-2">
-                        Nikita is a software engineer and author who believes in the power of
-                        storytelling to transport readers, challenge perspectives, and evoke
-                        deep emotions through her words.
+                        Nikita Pandey is a fiction author who writes about unspoken emotions, 
+                        silent battles, and love that lingers without confession. 
+                        Her stories are rooted in introspection and human connection, 
+                        shaped by a belief that some feelings are meant to be felt more than spoken.
                     </p>
                     <a routerLink="/about" class="read-more-btn mt-3">
                         Read more →
