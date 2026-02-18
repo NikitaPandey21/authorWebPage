@@ -217,3 +217,56 @@
     opacity: 1;
   }
 }
+
+// mobile menu
+/* ===== HAMBURGER BUTTON ===== */
+.menu-toggle {
+  background: transparent;
+  border: none;
+  color: #f2f2f2;
+  font-size: 1.8rem;
+  display: none;
+  z-index: 60;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+
+  /* show hamburger */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.4rem;
+  }
+
+  /* collapse menu container */
+  .app-menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  /* when open */
+  .app-menu.open {
+    max-height: 300px; /* enough for links */
+  }
+
+  /* menu list vertical */
+  .app-menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    padding-top: 0.8rem;
+  }
+
+  .app-menu a {
+    font-size: 0.9rem;
+  }
+}
