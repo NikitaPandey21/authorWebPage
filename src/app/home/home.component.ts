@@ -95,33 +95,3 @@ slideNext() {
     this.router.navigate(['/books'], { fragment: slug });
   }
 }
-
-
-// export class HomeComponent {
-
-//   // constructor(private router: Router) {}
-
-//   coverImages = [
-//       'NP1.jpg','NP4.jpg','NP5.jpg'
-//     ];
-//     // coverImages = [1, 4, 5];
-//     // activeIndex = 'img0';
-  
-//   constructor(private modalService: NgbModal, private router: Router) {
-//     console.log("constructor")
-//    }
-  
-//   open(modal: any) {
-//     // this.activeIndex = 'img' + index;
-//     console.log("img")
-//     this.modalService.open(modal, {
-//       centered: true,
-//       fullscreen: true
-//     });
-//   }
-  
-//   goToBook(slug: string) {
-//     this.router.navigate(['/books'], { fragment: slug });
-//   }
-
-// }
