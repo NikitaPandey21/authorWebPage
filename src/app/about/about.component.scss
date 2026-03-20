@@ -25,6 +25,13 @@ $desktop-large: 1400px;
   background: url('/assets/original/NP1.jpg') center/cover no-repeat;
 }
 
+@media (max-width: 576px) {
+  .about-page {
+    background: url('/assets/original/NPMOB.jpg') center/cover no-repeat;
+    background-position: top center;
+  }
+}
+
 /* dark overlay on background only */
 .about-page::after {
   content: "";

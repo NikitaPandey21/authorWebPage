@@ -85,14 +85,18 @@ $desktop-large: 1400px;
 
     /* ===== STORY ===== */
     .book-story {
-      width: 600px;
+      // width: 600px;
+      max-width: 600px;
+      width: 100%;
 
       @include tablet {
         width: 100%;
       }
 
       .book-desc {
-        width: 520px;
+        // width: 520px;
+        max-width: 520px;
+        width: 100%;
         font-family: 'Lora', serif;
         line-height: 1.5;
         color: #d0d0d0;
@@ -179,6 +183,12 @@ $desktop-large: 1400px;
         }
       }
     }
+  }
+}
+
+@media (max-width: 576px) {
+  .book-section {
+    padding: 4rem 1rem; // 👈 ADD SIDE PADDING
   }
 }
 
